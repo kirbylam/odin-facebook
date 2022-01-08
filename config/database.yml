@@ -22,7 +22,14 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
+        #<<: *defaulti
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: klam
+  password: kl8520
+  timeout: 5000
+  host: 'localhost'
   database: odin_facebook_development
 
   # The specified database role being used to connect to postgres.
