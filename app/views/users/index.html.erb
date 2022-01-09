@@ -1,0 +1,11 @@
+<%= render 'layouts/header' %>
+
+<h1>All Users</h1>
+
+<body>
+  <% @users.each do |user| %>
+    <div>
+      <%= user.full_name %>
+    </div>
+  <% end %>
+</body>

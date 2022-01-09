@@ -10,6 +10,10 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  def full_name()
+    self.first_name + ' ' + self.last_name
+  end
+
   def befriend(user)
     self.friends << user
     user.friends << self
