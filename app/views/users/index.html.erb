@@ -4,8 +4,13 @@
 
 <body>
   <% @users.each do |user| %>
-    <div>
-      <%= user.full_name %>
+    <div id='box'>
+      <div id='name'>
+        <%= user.full_name %>
+      </div>
+      <div id='friend_request'>
+        Send Friend Request
+      </div>
     </div>
   <% end %>
 </body>
