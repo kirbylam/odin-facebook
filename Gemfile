@@ -56,3 +56,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise', '>=4.8.1'
+
+group :development do
+  gem 'letter_opener', '>= 1.7.0'
+end 
