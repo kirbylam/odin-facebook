@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_09_002508) do
+ActiveRecord::Schema.define(version: 2022_01_13_233505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,26 @@ ActiveRecord::Schema.define(version: 2022_01_09_002508) do
   create_table "friendships", id: false, force: :cascade do |t|
     t.integer "person_id"
     t.integer "friend_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "notification_receivings", force: :cascade do |t|
+    t.integer "receiver_id"
+    t.integer "received_notification_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "notification_sendings", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "sent_notification_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.boolean "friend_request", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
