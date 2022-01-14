@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2022_01_13_233505) do
   end
 
   create_table "notifications", force: :cascade do |t|
-    t.boolean "friend_request", default: false
+    t.boolean "friend_request"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
