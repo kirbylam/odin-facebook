@@ -1,0 +1,16 @@
+<%= render 'layouts/header' %>
+
+<h1>Your Notifications</h1>
+
+<body>
+  <% @notifications.each do |notification| %>
+    <div id='box'>
+      <% if notification.friend_request %>
+        <p>
+          <%= notification.sender.full_name %> has sent you a friend request.
+        </p>
+      <% end %>
+    </div>
+  <% end %>
+</body>
+

@@ -9,7 +9,7 @@
         <%= user.full_name %>
       </div>
       <div id='friend_request'>
-        Send Friend Request
+        <%= button_to 'Send Friend Request', notifications_path(receiver: user, sender: current_user, friend_request: true) %>
       </div>
     </div>
   <% end %>

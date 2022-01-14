@@ -4,4 +4,9 @@ class Notification < ApplicationRecord
 
   has_one :notification_receiving, foreign_key: :received_notification_id
   has_one :receiver, through: :notification_receiving, class_name: 'User'
+
+  before_save :default_values
+  def default_values
+    self.friend_request ||= false
+  end
 end
