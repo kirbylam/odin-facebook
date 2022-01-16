@@ -7,6 +7,8 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  has_many :posts
+
   scope :all_except, ->(user) { where.not(id: user) }
 
   def full_name()
