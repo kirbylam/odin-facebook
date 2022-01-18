@@ -1,10 +1,18 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+  
+  def index
+    @post = Post.new
+    @posts = Post.all
+  end
+
   def new
     @post = Post.new
   end
 
   def create
-    @post = Post.new(post_params)
+    post = Post.new(post_params)
+    post.author = current_user 
 
     if post.save
       redirect_to root_path

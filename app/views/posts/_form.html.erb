@@ -1,0 +1,7 @@
+<%= form_with model: post do |form| %>
+  <div>
+    <%= form.label :body %></br>
+    <%= form.text_area :body, placeholder: 'Type your post here...', rows: 5, cols: 75 %></br>
+    <%= form.submit %>
+  </div>
+<% end  %>

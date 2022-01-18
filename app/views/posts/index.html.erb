@@ -1,0 +1,21 @@
+<%= render 'layouts/header' %>
+
+<h1>Timeline</h1>
+
+<%= render 'form', post: @post %>
+
+<body>
+  <% @posts.each do |post| %>
+    <div id='box'>
+      <div id='name'>
+        <%= post.author.full_name %>
+      </div>
+      <div>
+        <%= post.body %>
+      </div>
+      <div>
+        <p>Like</p>
+      </div>
+    </div>
+  <% end %>
+</body>
