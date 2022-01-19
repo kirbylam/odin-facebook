@@ -14,7 +14,7 @@
         <%= post.body %>
       </div>
       <div>
-        <p>Like</p>
+        <%= render 'like_button', post: post %>
       </div>
     </div>
   <% end %>

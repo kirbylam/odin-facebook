@@ -41,6 +41,14 @@
   background-color: #202020;
 }
 
+#likes {
+  font-weight: bold;  
+}
+
+#like_button {
+  font-weight: bold;
+}
+
 #name {
   font-weight: bold;
 }

@@ -7,8 +7,12 @@ class Post < ApplicationRecord
 
   validates :body, presence: true
 
-  after_save :default_values
-  def default_values
-    self.likes = 0
+  def likes
+    self.likers.count
+  end
+
+  def liked?(user)
+    return true if self.likers.exists?(user)
+    false
   end
 end
