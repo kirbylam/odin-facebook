@@ -60,3 +60,5 @@ gem 'devise', '>=4.8.1'
 group :development do
   gem 'letter_opener', '>= 1.7.0'
 end 
+
+gem 'jquery-rails', '>= 4.4.0' 

@@ -1,8 +1,5 @@
-<div id='like_button'>
-  <% if post.liked?(current_user.id) %>
-    <%= link_to 'Unlike', post_likings_path(liker: current_user, liked_post: post), method: :delete %>
-  <% else %>
-    <%= link_to 'Like', post_likings_path(liker: current_user, liked_post: post), method: :post %>
-  <% end %>
-  <%= post.likes %>
-</div>
+<% if post.liked?(current_user.id) %>
+  <%= button_to 'Unlike', post_likings_path(liker: current_user, liked_post: post), remote: true, method: :delete %>
+<% else %>
+  <%= button_to 'Like', post_likings_path(liker: current_user, liked_post: post), remote: true, method: :post %>
+<% end %>
