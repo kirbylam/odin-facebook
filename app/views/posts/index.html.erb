@@ -13,9 +13,15 @@
       <div>
         <%= post.body %>
       </div>
-      <div id='like_button_<%= post.id %>'>
-        <%= render 'like_button', post: post %>
+      <div id='like_block'>
+        <div id='like_button_<%= post.id %>'>
+          <%= render 'like_button', post: post %>
+        </div>
+        <div id='likes_<%= post.id %>'>
+          <%= post.likes %>
+        </div>
       </div>
+    </div>
     </div>
   <% end %>
 </body>

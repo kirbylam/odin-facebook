@@ -41,12 +41,13 @@
   background-color: #202020;
 }
 
-#likes {
-  font-weight: bold;  
+#like_block > div {
+  display: inline-block;
+  text-align: left;
 }
 
-#like_button {
-  font-weight: bold;
+div[id^='likes_'], div[id^='like_button_'] {
+  font-weight: bold;  
 }
 
 #name {
