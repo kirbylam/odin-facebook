@@ -14,30 +14,19 @@
         <%= post.body %>
       </div>
       <div id='like_block'>
-        <div id='like_button_<%= post.id %>'>
+        <div id="like_button_<%= post.id %>">
           <%= render 'like_button', post: post %>
         </div>
-        <div id='likes_<%= post.id %>'>
+        <div id="likes_<%= post.id %>">
           <%= post.likes %>
         </div>
       </div>
       <div>
         <%= render 'comment_form', comment: @comment, post: post.id %>
       </div>
-      <div>
+      <div id='comments'>
         <% post.comments.each do |comment| %>
-          <% if comment.nil? %>
-            <% puts 'NIL' %>
-          <% end %>
-          <div id='box'>
-            <div>
-              <% puts post.comments.count %>
-              <%= comment.author.full_name %>
-            </div>
-            <div>
-              <%= comment.body %>
-            </div>
-          </div>
+          <%= render 'single_comment', comment: comment %>
         <% end %>
       </div>
     </div>

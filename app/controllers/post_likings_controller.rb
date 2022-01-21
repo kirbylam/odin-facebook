@@ -3,9 +3,9 @@ class PostLikingsController < ApplicationController
     @post = Post.find(params[:liked_post])
     user = User.find(params[:liker])
     liked_post = PostLiking.create(liker: user, liked_post: @post)
+    
     respond_to do |format|
-      # format.html { redirect_to root_path }
-      format.js { render layout: false, content_type: 'application/javascript' } 
+      format.js { render 'like_unlike', layout: false, content_type: 'application/javascript' } 
     end
   end
 
@@ -15,8 +15,7 @@ class PostLikingsController < ApplicationController
     liked_post.destroy
 
     respond_to do |format|
-      # format.html { redirect_to root_path }
-      format.js { render 'create', layout: false }
+      format.js { render 'like_unlike', layout: false }
     end
   end
 end

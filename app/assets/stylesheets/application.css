@@ -14,7 +14,7 @@
  *= require_self
  */
 
-#box {
+#box, #single_comment {
   border-style: solid;
   border-color: grey;
   display: inline-block;
