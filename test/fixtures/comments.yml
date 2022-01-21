@@ -1,4 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-post1:
-  body: 'Test post'
+one:
+  body: MyString
+  post: one
+
+two:
+  body: MyString
+  post: two

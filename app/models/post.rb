@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  has_many :comments
+  
   has_one :post_authoring, foreign_key: :authored_post_id
   has_one :author, through: :post_authoring, source: :post_author
 

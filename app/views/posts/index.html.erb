@@ -2,7 +2,7 @@
 
 <h1>Timeline</h1>
 
-<%= render 'form', post: @post %>
+<%= render 'post_form', post: @post %>
 
 <body>
   <% @posts.each do |post| %>
@@ -20,6 +20,25 @@
         <div id='likes_<%= post.id %>'>
           <%= post.likes %>
         </div>
+      </div>
+      <div>
+        <%= render 'comment_form', comment: @comment, post: post.id %>
+      </div>
+      <div>
+        <% post.comments.each do |comment| %>
+          <% if comment.nil? %>
+            <% puts 'NIL' %>
+          <% end %>
+          <div id='box'>
+            <div>
+              <% puts post.comments.count %>
+              <%= comment.author.full_name %>
+            </div>
+            <div>
+              <%= comment.body %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
     </div>

@@ -1,0 +1,8 @@
+<%= form_with model: comment do |form| %>
+  <div>
+    <%= form.label :body %></br>
+    <%= form.text_area :body, placeholder: 'Type your comment here...', rows: 1, cols: 75 %></br>
+    <%= form.hidden_field :post_id, value: post %>
+    <%= form.submit %>
+  </div>
+<% end  %>
