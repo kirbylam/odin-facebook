@@ -24,7 +24,7 @@
       <div>
         <%= render 'comment_form', comment: @comment, post: post.id %>
       </div>
-      <div id='comments'>
+      <div id="comments_<%= post.id %>">
         <% post.comments.each do |comment| %>
           <%= render 'single_comment', comment: comment %>
         <% end %>
